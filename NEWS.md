@@ -1,3 +1,3 @@
-# reslife 0.1.1
+# reslife 0.1.2
 
-* Updates to the genF + some other ease of use updates. 
+* Updates to gengamma. 
