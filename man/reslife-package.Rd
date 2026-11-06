@@ -12,6 +12,7 @@ A pair of functions for calculating mean residual life (MRL) , median residual l
 Useful links:
 \itemize{
   \item \url{https://github.com/an-crawford/reslife}
+  \item \url{https://kaloklee.github.io/reslife/}
 }
 
 }
@@ -20,6 +21,7 @@ Useful links:
 
 Authors:
 \itemize{
+  \item Andrew Crawford \email{atcrawford18@gmail.com}
   \item Zekai Wang \email{wangzekai1203@gmail.com}
   \item Ka Lok Lee \email{kaloklee@gmail.com}
 }

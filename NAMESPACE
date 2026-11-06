@@ -5,12 +5,17 @@ export(reslifefsr)
 import(flexsurv)
 import(gsl)
 importFrom(pracma,incgam)
-importFrom(stats,integrate)
-importFrom(stats,model.matrix)
-importFrom(stats,pbeta)
-importFrom(stats,pgamma)
-importFrom(stats,pnorm)
-importFrom(stats,qexp)
-importFrom(stats,qgamma)
-importFrom(stats,qlnorm)
-importFrom(stats,qweibull)
+importFrom(stats,
+  integrate,
+  model.matrix,
+  pbeta,
+  pgamma,
+  plnorm,
+  pnorm,
+  predict,
+  qexp,
+  qgamma,
+  qlnorm,
+  qweibull,
+  setNames
+)

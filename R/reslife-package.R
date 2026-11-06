@@ -17,7 +17,6 @@ NULL
 NULL
 
 ## usethis namespace: start
-#' @importFrom stats integrate model.matrix pbeta pgamma pnorm qexp qgamma
-#' qlnorm qweibull
+#' @importFrom stats integrate model.matrix pbeta pgamma pnorm qexp qgamma qlnorm qweibull
 ## usethis namespace: end
 NULL

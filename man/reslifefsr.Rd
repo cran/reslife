@@ -7,35 +7,33 @@
 reslifefsr(obj, life, p = 0.5, type = "mean", newdata = data.frame())
 }
 \arguments{
-\item{obj}{Name of a flexsurvreg() object from which data is extracted.}
+\item{obj}{A fitted \code{flexsurvreg} object from package \pkg{flexsurv}.}
 
-\item{life}{Value at which the user wants to calculate residual life. Must be a scalar.}
+\item{life}{Scalar numeric value of elapsed time at which to calculate residual life.}
 
-\item{p}{percentile for percentile residual life, default is .5}
+\item{p}{Percentile for quantile residual life. Default is 0.5.}
 
-\item{type}{can be 'mean', 'median', 'percentile', or 'all'. Default is
-'mean'.}
+\item{type}{Type of residual life to return: \code{"mean"}, \code{"median"}, \code{"quantile"},
+\code{"percentile"}, or \code{"all"}. Default is \code{"mean"}.}
 
-\item{newdata}{a data frame containing new data values to calculate residual
-life for. Default is a blank data frame.}
+\item{newdata}{A data frame containing covariate values to evaluate. Default is empty (evaluates baseline).}
 }
 \value{
-A vector of residual life values
+A numeric vector (if \code{type} is \code{"mean"}, \code{"median"}, or \code{"quantile"})
+  or a data frame (if \code{type == "all"}), with one row per covariate profile in \code{newdata}.
 }
 \description{
-Calculate residual life values using a flexsurvreg() object. Contains an option to supply new data
-and returns the output as a vector.
+Calculate residual life values using a fitted \code{flexsurvreg} object.
+Allows specifying covariate profiles via \code{newdata}.
 }
 \examples{
 library(flexsurv)
-fitg <- flexsurv::flexsurvreg(formula = Surv(futime, fustat) ~ 1,
-data = ovarian, dist="gengamma")
-reslifefsr(obj = fitg, life = 6, p= .75, type= 'all')
+fitg <- flexsurvreg(Surv(futime, fustat) ~ 1, data = ovarian, dist = "gengamma")
+reslifefsr(obj = fitg, life = 6, p = 0.75, type = "all")
 
-fitg2 <- flexsurv::flexsurvreg(formula = Surv(futime, fustat) ~ age,
-data = ovarian, dist="gengamma")
-df_new = data.frame(age = 12)
-reslifefsr(obj = fitg2, life = 3, type = 'median', newdata = df_new)
+fitg2 <- flexsurvreg(Surv(futime, fustat) ~ age, data = ovarian, dist = "gengamma")
+df_new <- data.frame(age = c(50, 65))
+reslifefsr(obj = fitg2, life = 3, type = "median", newdata = df_new)
 
 }
 \references{
@@ -49,5 +47,5 @@ Prentice RL (1975). “Discrimination among some parametric models.” Biometrik
 607–614.
 
 Stacy EW (1962). “A generalization of the gamma distribution.” The Annals of mathematical
-statistics, pp. 1187–1192
+statistics, pp. 1187–1192.
 }

@@ -1,3 +1,7 @@
-# reslife 0.2.1
+# reslife 0.3.0
 
-* Updates to genF and genF.orig to handle all values of parameters. 
+* Consolidated internal engine for `reslifefsr()`.
+* Vectorized `residlife()` across evaluation points.
+* Added comprehensive unit test suite (`testthat`).
+* Updated documentation and vignette to cite Wang et al. (2025).
+* Transferred package maintainership to Ka Lok Lee.
